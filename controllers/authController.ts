@@ -12,6 +12,7 @@ export const register = async (req: Request, res: Response) => {
   const user = new User({ name, email, password: hash });
   
   await user.save();
+  
   res.status(201).json({ message: "User registered" });
 };
 
