@@ -8,8 +8,10 @@ const orderSchema = new mongoose.Schema({
       quantity: Number,
     },
   ],
+
   totalPrice: Number,
   status: { type: String, default: "pending" },
+  
 });
 
 export const Order = mongoose.model("Order", orderSchema);
