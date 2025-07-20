@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+
 import { User } from "../models/UserModel";
 
 export const register = async (req: Request, res: Response) => {
@@ -12,8 +13,9 @@ export const register = async (req: Request, res: Response) => {
   const user = new User({ name, email, password: hash });
   
   await user.save();
-  
+
   res.status(201).json({ message: "User registered" });
+
 };
 
 export const login = async (req: Request, res: Response) => {
