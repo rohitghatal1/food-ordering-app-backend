@@ -10,6 +10,7 @@ const errorHandler = (err: any, req: any, res: any, next: any) => {
           message: err.message,
         });
       } else {
+        
         res.status(400).json({
           status: "failed",
           message: err,
