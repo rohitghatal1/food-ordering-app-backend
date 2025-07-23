@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import errorHandler from "./utils/errorHandler";
 import authRoutes from "./routes/authRouth";
 import foodRoutes from "./routes/foodRoutes";
+import orderRoutes from "./routes/orderRoutes"
 
 dotenv.config();
 
