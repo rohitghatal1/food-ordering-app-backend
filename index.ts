@@ -1,10 +1,11 @@
 import errorHandler from "./utils/errorHandler";
 const express = require("express");
 const mongoose = require("mongoose");
+
 import dotenv from "dotenv";
+
 const cors = require("cors");
 const http = require("http");
-const socketio = require("socket.io");
 
 import authRoutes from "./routes/authRouth";
 import orderRoutes from "./routes/orderRoutes";
@@ -23,21 +24,14 @@ app.use(express.json());
 
 //Routes
 app.get("/", (req: any, res: any) => {
-  res.send("QuickChat backend is running!");
+  res.send(" backend is running!");
 });
 
 // user routes
 app.use("/api/auth", authRoutes);
-app.use("/api/chat", foodRoutes);
-app.use("/api/users/", orderRoutes);
+app.use("/api/food", foodRoutes);
+app.use("/api/order/", orderRoutes);
 
-
-const io = socketio(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "PATCh", "DELETE"],
-  },
-});
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
