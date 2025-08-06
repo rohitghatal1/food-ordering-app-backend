@@ -11,13 +11,10 @@ import authRoutes from "./routes/authRouth";
 import orderRoutes from "./routes/orderRoutes";
 import foodRoutes from "./routes/foodRoutes";
 
-
-
 dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-import connectDB from "./config/db";
 
 //middleware
 app.use(cors());
