@@ -18,6 +18,7 @@ const app = express();
 const server = http.createServer(app);
 
 import connectDB from "./config/db";
+
 //middleware
 app.use(cors());
 app.use(express.json());

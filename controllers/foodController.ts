@@ -14,6 +14,7 @@ export const addFood = async (req: any, res: any) => {
 };
 
 export const deleteFood = async (req:any, res:any) => {
+const {foodId} = req.body;
 
   
 }
